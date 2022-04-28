@@ -1,0 +1,52 @@
+header{
+    background-image: url(./../img/oguzhan-edman-mDtbe0A227E-unsplash.jpg);
+    background-size: cover ;
+    position: relative;
+    height: 40vh;
+    background-position-y: -6vh;
+
+    @include for_breakpoint("small"){
+        height: 400px;
+        background-position-y: 20%;
+    }
+    
+    @include for_breakpoint("medium"){
+        position: fixed;
+        width: 50vw;
+        height: 100vh;
+    }
+
+
+    #logo{
+        top: 20%;
+        position: relative;
+        background-color: rgba(48, 48, 48, 0.5);
+        padding: 10px;
+
+        img{
+            width: 100%;
+            
+        }
+    }
+
+    .credit{
+        position: absolute;
+        bottom: 5px;
+        color: $primary-text-color;
+        background-color: rgba(204, 204, 204, 0.705);
+        border: 1px solid rgb(206, 206, 206);
+        display: block;
+        width: 70%;
+        padding: 4px;
+        text-align: center;
+        transform: translateX(-50%);
+        left: 50%;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        color: #3e3e3e;
+        a{
+            color: $primary-bg-color;
+        }
+    }
+
+}

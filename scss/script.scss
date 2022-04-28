@@ -1,0 +1,23 @@
+@import "initials";
+@import "variables";
+@import "media_query";
+@import "header";
+
+body{
+    @include for_breakpoint("medium"){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "header form";
+        height: 100vh;
+    }
+
+}
+
+main{
+    margin: 10px;
+    @import "signup";
+    @import "login";
+
+    grid-area: form;
+}
+

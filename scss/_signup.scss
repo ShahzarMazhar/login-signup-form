@@ -1,0 +1,188 @@
+.signup{
+
+    .disclaimer{
+        // margin: auto;
+        width: 90%;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: calc(1rem + 0.3vw);
+
+    }
+    .form{
+        width: 100%;
+        text-align: center;
+        flex-basis: 75%;
+        h1{
+            padding-top: 8px;
+        }
+        p{
+            font-size: 0.9rem;
+            color: rgb(63, 63, 63);
+            font-style: italic;
+
+        }
+        .required{
+            color: red;
+        }
+        .optional{
+            @extend p;
+        }
+        form{
+            margin: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+
+            @include for_breakpoint("xx-large"){
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .input{
+                position: relative;
+                font-size: 1.2rem;
+                text-align: left;
+                margin: 15px 0;
+                width: 100%;
+
+                input{
+                    font-size: 1.2rem;
+                    position: relative;
+                    width: 100%;
+                    padding-top: 10px;
+                    padding-left: 6px;
+                    padding-bottom: 5px;
+                    border: none;
+                    outline: none;
+                    border-bottom: 2px solid #c7c7c7;
+                    
+                    + label{
+                        position: absolute;
+                        text-transform: uppercase;
+                        left: 6px;
+                        top: 15px;
+                        opacity: 0.5;
+                        cursor: text;
+                        transition: 0.3s;
+                    }
+                    &:focus + label, &:not(:placeholder-shown) +label{
+                        color: $primary-bg-color;
+                        opacity: 1;
+                        transform: translateY(-140%);
+                        font-size: 0.8rem;
+                        span{
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+
+                &::after, button::before{
+                    content: "";
+                    height: 2px;
+                    width: 100%;
+                    background-color: $primary-bg-color;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    transition: 0.3s;
+                    
+                }
+                &:focus-within::after{
+                    width: 100%;
+                    @include for_breakpoint("xx-large"){
+                        width: 45%;
+                    }
+                }
+                &:focus-within:not(.input-phone)::after{
+                    width: 100%;
+                }
+                button{
+                    @extend input;
+                    margin-top: 8px;
+                    border: none;
+                    padding-left: 0;
+                    padding-bottom: 7px;
+                    cursor: pointer;
+                    background-color: #c7c7c7;
+                    z-index: 1;
+                    transition: 0.3s;
+                    
+                    &::before{
+                        height: 4px;
+                        width: 100%;
+
+                    }
+                    &:hover{
+                        background-color: #c7c7c7;
+                        color: white;
+                        &::before{
+                            height: 100%;
+                            color: white;
+                            z-index: -1;
+
+                        }
+                    }
+                }
+                .error{
+                    border-bottom: 2px solid red;
+                    + label{
+                        color: red;
+                    }
+                }
+            }
+            .error_msg{
+                position: relative;
+                font-size: 0.9rem;
+                padding: 4px;
+                border-radius: 0 0 5px 5px;
+                right: 0;
+                display: inline-block;
+                height: 0;
+
+                &.valid::before{
+                    content: "✔ ";
+                    color: green;
+                }
+                &.invalid::before{
+                    content: "✗ ";
+                    color: red;
+                }
+            }
+            
+            .input:not(.input-submit):not(.input-phone){
+
+                @include for_breakpoint("xx-large"){
+                    flex-basis: 45%;
+                }
+
+            }
+            .input-submit > p{
+                text-align: center;
+            }
+            .input-phone > input{
+                @include for_breakpoint("xx-large"){
+                    width: 45%;
+                }
+            }
+
+            a{
+                color: $primary-bg-color;
+            }
+        }
+    }
+    @include for_breakpoint("xx-large"){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+
+    // display: none;
+    }
+    
+    
+}

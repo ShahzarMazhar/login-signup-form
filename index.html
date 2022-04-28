@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imaginary Services | Signup</title>
+    <link rel="stylesheet" href="./css/script.min.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="./img/logo.png" alt="Shahzar Mazhar Logo">
+        </div>
+        <span class="credit">Photo by <a href="https://unsplash.com/@oguzhanedman?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Oğuzhan EDMAN</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+        </span>
+    </header>
+    <main>
+        <section class="signup">
+            <div class="disclaimer">
+                <p>This is a demo registration page! You know you need something like this in your life to help you realize your deepest dreams</p>
+            </div>
+            <div class="form">
+                <h1 class="main-heading">Sign up today</h1>
+                <p><em>Fields marked with an asterisk (<span class="required">*</span>) are required</em></p>
+                <form action="" id="signup">
+                    <div class="input input-fname">
+                        <input class="" type="text" name="fname" id="fname" placeholder=" " >
+                        <label for="fname">First Name <span class="required">*</span></label>
+                    </div>
+                    <div class="input input-lname">
+                        <input class="" type="text" name="lname" id="lname" placeholder=" ">
+                        <label for="lname">Last Name <span class="optional">(optional)</span></label>
+                    </div>
+                    <div class="input input-email">
+                        <input type="email" name="email" id="email" placeholder=" " >
+                        <label for="email">Email <span class="required">*</span></label>
+
+                    </div>
+                    <div class="input input-uname">
+                        <input type="text" name="uname" id="uname" placeholder=" ">
+                        <label for="uname">Username</label>
+                    </div>
+                    <div class="input input-phone">
+                        <input type="tel" name="phone" id="phone" placeholder=" ">
+                        <label for="phone">Phone <span class="required" >*</span></label>
+                    </div>
+                    <div class="input input-password">
+                        <input type="password" name="password" id="password" placeholder=" " required pattern="">
+                        <label for="password">Password <span class="required">*</span></label>
+                      
+
+                    </div>
+                    <div class="input input-c-password">
+                        <input type="password" name="c-password" id="c-password" placeholder=" ">
+                        <label for="c-password">Confirm Password <span class="required">*</span></label>
+                    </div>
+                    <div class="input input-submit">
+                        <p>By Signing up you are getting none.</p>
+                        <button type="submit" name="submit" id="submit" >Create My Account</button>
+                    </div>
+                    <div ><p>Already have an account? <a href="#login">Log in</a></p></div>
+                </form>
+            </div>
+        </section>
+        <section class="login" style="display: none;">
+            <div class="disclaimer">
+                <p>This is a demo login page! But if you did signup, you can login. Your info in saved in JS Variable</p>
+            </div>
+            <div class="form">
+                <h1 class="main-heading">Login</h1>
+                <form action="" id="login">
+                    <div class="input input-email">
+                        <input type="email" name="email" id="login-email" placeholder=" " required>
+                        <label for="login-email">Email or Username</label>
+                    </div>
+                    <div class="input input-password">
+                        <input type="password" name="password" placeholder=" " id="login-password">
+                        <label for="login-password">Password </label>
+                    </div>
+                    <div class="input input-submit">
+                        <button type="submit" name="submit" id="submit" >Log in</button>
+                    </div>
+                    <div ><p>Don't have an account? <a href="#signup">Create account</a></p></div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
