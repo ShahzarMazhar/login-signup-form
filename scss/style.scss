@@ -8,7 +8,7 @@ body{
     @include for_breakpoint("medium"){
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "header form";
+        grid-template-areas: ". main";
         height: 100vh;
     }
 
@@ -16,15 +16,21 @@ body{
         margin: 10px;
         @import "signup";
         @import "login";
-        overflow: hidden;
-        grid-area: form;
+        overflow-x: hidden;
+        grid-area: main;
 
+        // @include for_breakpoint("medium"){
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: "form";
+        // }
 
         .login{
-            transform: translateY(-100%);
+            // transform: translateY(-100%);
+            // z-index: ;
         }
         .translateX100{
-            transform: translate(100%, -100%);
+            transform: translateX(100%);
         }
 
         .translateX-100{

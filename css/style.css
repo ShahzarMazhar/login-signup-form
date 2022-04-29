@@ -65,20 +65,28 @@ header .credit a {
   body {
     display: -ms-grid;
     display: grid;
-    /* -ms-grid-columns: (1fr)[2]; */
+    -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "header form";
+        grid-template-areas: ". main";
     height: 100vh;
   }
 }
 
 body main {
   margin: 10px;
-  overflow: hidden;
-  grid-area: form;
+  overflow-x: hidden;
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "form";
 }
 
 body main .signup, body main .login {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: form;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -250,14 +258,6 @@ body main .signup .form form .input button:hover::before, body main .login .form
   z-index: -1;
 }
 
-body main .signup .form form .input .error, body main .login .form form .input .error {
-  border-bottom: 2px solid red;
-}
-
-body main .signup .form form .input .error + label, body main .login .form form .input .error + label {
-  color: red;
-}
-
 body main .signup .form form .requirement, body main .login .form form .requirement {
   position: relative;
   font-size: 0.9rem;
@@ -311,14 +311,9 @@ body main .signup .form form a, body main .login .form form a {
   }
 }
 
-body main .login {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-}
-
 body main .translateX100 {
-  -webkit-transform: translate(100%, -100%);
-          transform: translate(100%, -100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 body main .translateX-100 {
