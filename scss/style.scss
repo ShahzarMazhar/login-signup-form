@@ -2,6 +2,7 @@
 @import "variables";
 @import "media_query";
 @import "header";
+@import url('https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap');
 
 body{
     @include for_breakpoint("medium"){
@@ -11,13 +12,29 @@ body{
         height: 100vh;
     }
 
+    main{
+        margin: 10px;
+        @import "signup";
+        @import "login";
+        overflow: hidden;
+        grid-area: form;
+
+
+        .login{
+            transform: translateY(-100%);
+        }
+        .translateX100{
+            transform: translate(100%, -100%);
+        }
+
+        .translateX-100{
+            transform: translateX(-100%);
+        }
+
+    }
 }
 
-main{
-    margin: 10px;
-    @import "signup";
-    @import "login";
 
-    grid-area: form;
-}
 
+// perspective: 30vw;
+// transform: rotateY(-30deg);

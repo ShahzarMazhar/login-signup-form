@@ -1,5 +1,6 @@
 .signup{
 
+    transition: 0.5s;
     .disclaimer{
         // margin: auto;
         width: 90%;
@@ -68,10 +69,19 @@
                         cursor: text;
                         transition: 0.3s;
                     }
+                    &:invalid:not(:placeholder-shown):not(:focus) {
+                        background-color: rgb(255, 203, 203);
+                    }
+                    &:invalid:focus:not(:placeholder-shown) {
+                        & ~ .requirement {
+                          height: 50px;
+                        }
+                      }
+
                     &:focus + label, &:not(:placeholder-shown) +label{
                         color: $primary-bg-color;
                         opacity: 1;
-                        transform: translateY(-140%);
+                        transform: translateY(-180%);
                         font-size: 0.8rem;
                         span{
                             font-size: 0.8em;
@@ -81,11 +91,12 @@
 
                 &::after, button::before{
                     content: "";
-                    height: 2px;
+                    height: 3px;
                     width: 100%;
                     background-color: $primary-bg-color;
                     position: absolute;
-                    bottom: 0;
+                    // bottom: 0;
+                    top: 1.9em;
                     left: 0;
                     width: 0;
                     transition: 0.3s;
@@ -114,6 +125,8 @@
                     &::before{
                         height: 4px;
                         width: 100%;
+                        top: inherit;
+                        bottom: 0;
 
                     }
                     &:hover{
@@ -127,30 +140,21 @@
                         }
                     }
                 }
-                .error{
-                    border-bottom: 2px solid red;
-                    + label{
-                        color: red;
-                    }
-                }
             }
-            .error_msg{
+            .requirement{
                 position: relative;
                 font-size: 0.9rem;
-                padding: 4px;
+                // padding: 4px;
                 border-radius: 0 0 5px 5px;
                 right: 0;
-                display: inline-block;
+                display: block;
+                transition: 0.3s;
                 height: 0;
+                overflow: hidden;
+                color: red;
+                font-style: italic;
 
-                &.valid::before{
-                    content: "✔ ";
-                    color: green;
-                }
-                &.invalid::before{
-                    content: "✗ ";
-                    color: red;
-                }
+
             }
             
             .input:not(.input-submit):not(.input-phone){

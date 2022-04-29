@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Dr+Sugiyama&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -36,10 +36,7 @@ header #logo {
   position: relative;
   background-color: rgba(48, 48, 48, 0.5);
   padding: 10px;
-}
-
-header #logo img {
-  width: 100%;
+  fill: white;
 }
 
 header .credit {
@@ -61,54 +58,60 @@ header .credit {
 }
 
 header .credit a {
-  color: #5100d3;
+  color: #1A697E;
 }
 
 @media (min-width: 768px) {
   body {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[2];
+    /* -ms-grid-columns: (1fr)[2]; */
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "header form";
     height: 100vh;
   }
 }
 
-main {
+body main {
   margin: 10px;
+  overflow: hidden;
   grid-area: form;
 }
 
-main .signup .disclaimer, main .login .disclaimer {
+body main .signup, body main .login {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main .signup .disclaimer, body main .login .disclaimer {
   width: 90%;
   margin-bottom: 10px;
   font-weight: 600;
   font-size: calc(1rem + 0.3vw);
 }
 
-main .signup .form, main .login .form {
+body main .signup .form, body main .login .form {
   width: 100%;
   text-align: center;
   -ms-flex-preferred-size: 75%;
       flex-basis: 75%;
 }
 
-main .signup .form h1, main .login .form h1 {
+body main .signup .form h1, body main .login .form h1 {
   padding-top: 8px;
 }
 
-main .signup .form p, main .login .form p, main .signup .form .optional, main .login .form .optional {
+body main .signup .form p, body main .login .form p, body main .signup .form .optional, body main .login .form .optional {
   font-size: 0.9rem;
   color: #3f3f3f;
   font-style: italic;
 }
 
-main .signup .form .required, main .login .form .required {
+body main .signup .form .required, body main .login .form .required {
   color: red;
 }
 
-main .signup .form form, main .login .form form {
+body main .signup .form form, body main .login .form form {
   margin: 10px;
   padding: 20px;
   display: -webkit-box;
@@ -123,7 +126,7 @@ main .signup .form form, main .login .form form {
 }
 
 @media (min-width: 1400px) {
-  main .signup .form form, main .login .form form {
+  body main .signup .form form, body main .login .form form {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -139,7 +142,7 @@ main .signup .form form, main .login .form form {
   }
 }
 
-main .signup .form form .input, main .login .form form .input {
+body main .signup .form form .input, body main .login .form form .input {
   position: relative;
   font-size: 1.2rem;
   text-align: left;
@@ -147,7 +150,7 @@ main .signup .form form .input, main .login .form form .input {
   width: 100%;
 }
 
-main .signup .form form .input input, main .login .form form .input input, main .signup .form form .input button, main .login .form form .input button {
+body main .signup .form form .input input, body main .login .form form .input input, body main .signup .form form .input button, body main .login .form form .input button {
   font-size: 1.2rem;
   position: relative;
   width: 100%;
@@ -159,7 +162,7 @@ main .signup .form form .input input, main .login .form form .input input, main 
   border-bottom: 2px solid #c7c7c7;
 }
 
-main .signup .form form .input input + label, main .login .form form .input input + label, main .signup .form form .input button + label, main .login .form form .input button + label {
+body main .signup .form form .input input + label, body main .login .form form .input input + label, body main .signup .form form .input button + label, body main .login .form form .input button + label {
   position: absolute;
   text-transform: uppercase;
   left: 6px;
@@ -170,46 +173,54 @@ main .signup .form form .input input + label, main .login .form form .input inpu
   transition: 0.3s;
 }
 
-main .signup .form form .input input:focus + label, main .login .form form .input input:focus + label, main .signup .form form .input button:focus + label, main .login .form form .input button:focus + label, main .signup .form form .input input:not(:placeholder-shown) + label, main .login .form form .input input:not(:placeholder-shown) + label, main .signup .form form .input button:not(:placeholder-shown) + label, main .login .form form .input button:not(:placeholder-shown) + label {
-  color: #5100d3;
+body main .signup .form form .input input:invalid:not(:placeholder-shown):not(:focus), body main .login .form form .input input:invalid:not(:placeholder-shown):not(:focus), body main .signup .form form .input button:invalid:not(:placeholder-shown):not(:focus), body main .login .form form .input button:invalid:not(:placeholder-shown):not(:focus) {
+  background-color: #ffcbcb;
+}
+
+body main .signup .form form .input input:invalid:focus:not(:placeholder-shown) ~ .requirement, body main .login .form form .input input:invalid:focus:not(:placeholder-shown) ~ .requirement, body main .signup .form form .input button:invalid:focus:not(:placeholder-shown) ~ .requirement, body main .login .form form .input button:invalid:focus:not(:placeholder-shown) ~ .requirement {
+  height: 50px;
+}
+
+body main .signup .form form .input input:focus + label, body main .login .form form .input input:focus + label, body main .signup .form form .input button:focus + label, body main .login .form form .input button:focus + label, body main .signup .form form .input input:not(:placeholder-shown) + label, body main .login .form form .input input:not(:placeholder-shown) + label, body main .signup .form form .input button:not(:placeholder-shown) + label, body main .login .form form .input button:not(:placeholder-shown) + label {
+  color: #1A697E;
   opacity: 1;
-  -webkit-transform: translateY(-140%);
-          transform: translateY(-140%);
+  -webkit-transform: translateY(-180%);
+          transform: translateY(-180%);
   font-size: 0.8rem;
 }
 
-main .signup .form form .input input:focus + label span, main .login .form form .input input:focus + label span, main .signup .form form .input button:focus + label span, main .login .form form .input button:focus + label span, main .signup .form form .input input:not(:placeholder-shown) + label span, main .login .form form .input input:not(:placeholder-shown) + label span, main .signup .form form .input button:not(:placeholder-shown) + label span, main .login .form form .input button:not(:placeholder-shown) + label span {
+body main .signup .form form .input input:focus + label span, body main .login .form form .input input:focus + label span, body main .signup .form form .input button:focus + label span, body main .login .form form .input button:focus + label span, body main .signup .form form .input input:not(:placeholder-shown) + label span, body main .login .form form .input input:not(:placeholder-shown) + label span, body main .signup .form form .input button:not(:placeholder-shown) + label span, body main .login .form form .input button:not(:placeholder-shown) + label span {
   font-size: 0.8em;
 }
 
-main .signup .form form .input::after, main .login .form form .input::after, main .signup .form form .input button::before, main .login .form form .input button::before {
+body main .signup .form form .input::after, body main .login .form form .input::after, body main .signup .form form .input button::before, body main .login .form form .input button::before {
   content: "";
-  height: 2px;
+  height: 3px;
   width: 100%;
-  background-color: #5100d3;
+  background-color: #1A697E;
   position: absolute;
-  bottom: 0;
+  top: 1.9em;
   left: 0;
   width: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-main .signup .form form .input:focus-within::after, main .login .form form .input:focus-within::after {
+body main .signup .form form .input:focus-within::after, body main .login .form form .input:focus-within::after {
   width: 100%;
 }
 
 @media (min-width: 1400px) {
-  main .signup .form form .input:focus-within::after, main .login .form form .input:focus-within::after {
+  body main .signup .form form .input:focus-within::after, body main .login .form form .input:focus-within::after {
     width: 45%;
   }
 }
 
-main .signup .form form .input:focus-within:not(.input-phone)::after, main .login .form form .input:focus-within:not(.input-phone)::after {
+body main .signup .form form .input:focus-within:not(.input-phone)::after, body main .login .form form .input:focus-within:not(.input-phone)::after {
   width: 100%;
 }
 
-main .signup .form form .input button, main .login .form form .input button {
+body main .signup .form form .input button, body main .login .form form .input button {
   margin-top: 8px;
   border: none;
   padding-left: 0;
@@ -221,73 +232,69 @@ main .signup .form form .input button, main .login .form form .input button {
   transition: 0.3s;
 }
 
-main .signup .form form .input button::before, main .login .form form .input button::before {
+body main .signup .form form .input button::before, body main .login .form form .input button::before {
   height: 4px;
   width: 100%;
+  top: inherit;
+  bottom: 0;
 }
 
-main .signup .form form .input button:hover, main .login .form form .input button:hover {
+body main .signup .form form .input button:hover, body main .login .form form .input button:hover {
   background-color: #c7c7c7;
   color: white;
 }
 
-main .signup .form form .input button:hover::before, main .login .form form .input button:hover::before {
+body main .signup .form form .input button:hover::before, body main .login .form form .input button:hover::before {
   height: 100%;
   color: white;
   z-index: -1;
 }
 
-main .signup .form form .input .error, main .login .form form .input .error {
+body main .signup .form form .input .error, body main .login .form form .input .error {
   border-bottom: 2px solid red;
 }
 
-main .signup .form form .input .error + label, main .login .form form .input .error + label {
+body main .signup .form form .input .error + label, body main .login .form form .input .error + label {
   color: red;
 }
 
-main .signup .form form .error_msg, main .login .form form .error_msg {
+body main .signup .form form .requirement, body main .login .form form .requirement {
   position: relative;
   font-size: 0.9rem;
-  padding: 4px;
   border-radius: 0 0 5px 5px;
   right: 0;
-  display: inline-block;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   height: 0;
-}
-
-main .signup .form form .error_msg.valid::before, main .login .form form .error_msg.valid::before {
-  content: "✔ ";
-  color: green;
-}
-
-main .signup .form form .error_msg.invalid::before, main .login .form form .error_msg.invalid::before {
-  content: "✗ ";
+  overflow: hidden;
   color: red;
+  font-style: italic;
 }
 
 @media (min-width: 1400px) {
-  main .signup .form form .input:not(.input-submit):not(.input-phone), main .login .form form .input:not(.input-submit):not(.input-phone) {
+  body main .signup .form form .input:not(.input-submit):not(.input-phone), body main .login .form form .input:not(.input-submit):not(.input-phone) {
     -ms-flex-preferred-size: 45%;
         flex-basis: 45%;
   }
 }
 
-main .signup .form form .input-submit > p, main .login .form form .input-submit > p, main .signup .form form .input-submit > .optional, main .login .form form .input-submit > .optional {
+body main .signup .form form .input-submit > p, body main .login .form form .input-submit > p, body main .signup .form form .input-submit > .optional, body main .login .form form .input-submit > .optional {
   text-align: center;
 }
 
 @media (min-width: 1400px) {
-  main .signup .form form .input-phone > input, main .login .form form .input-phone > input, main .signup .form form .input .input-phone > button, main .login .form form .input .input-phone > button {
+  body main .signup .form form .input-phone > input, body main .login .form form .input-phone > input, body main .signup .form form .input .input-phone > button, body main .login .form form .input .input-phone > button {
     width: 45%;
   }
 }
 
-main .signup .form form a, main .login .form form a {
-  color: #5100d3;
+body main .signup .form form a, body main .login .form form a {
+  color: #1A697E;
 }
 
 @media (min-width: 1400px) {
-  main .signup, main .login {
+  body main .signup, body main .login {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -302,5 +309,20 @@ main .signup .form form a, main .login .form form a {
             align-items: center;
     height: 100%;
   }
+}
+
+body main .login {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+body main .translateX100 {
+  -webkit-transform: translate(100%, -100%);
+          transform: translate(100%, -100%);
+}
+
+body main .translateX-100 {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 /*# sourceMappingURL=style.css.map */
