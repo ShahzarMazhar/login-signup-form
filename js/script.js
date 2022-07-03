@@ -24,32 +24,9 @@ function getSignupPage(e){
 
 //
 
-function throwError(){
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function test(e){
     cPass.pattern = e.target.value
 }
-
-
 
 const errorMsg = {
     noName: "Please enter your first name"
