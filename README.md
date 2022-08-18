@@ -1,5 +1,5 @@
 # LogIn & SignUp Form
-Another project assigned by [theOdinProject](https://www.theodinproject.com/lessons/851/project_submissions?page=1) to practice some Intermediate level of HTML and CSS.
+Another project [Sign-up Form](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form), assigned by [TheOdinProject](https://www.theodinproject.com), to practice some Intermediate level of HTML and CSS.
 
 ## Learning Outcomes Summary
 - SVG
